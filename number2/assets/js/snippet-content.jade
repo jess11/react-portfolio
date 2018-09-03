@@ -1,0 +1,29 @@
+include ../../atoms/button1/button1
+
+
+mixin snippet-content(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - spec.introheading = spec.introheading || ''
+  - spec.introheadingVisible = spec.introheadingVisible || ''
+  - spec.heading = spec.heading || ''
+  - spec.body = spec.body || ''
+  - spec.backgroundColor = spec.backgroundColor || ''
+
+
+
+  .snippet-content(style={'background-color':'#{spec.backgroundColor}'})
+
+    .container.js-snippet-content
+      .wrap.body-wrap
+        .snippet-content-left
+          if spec.introheadingVisible
+            span.introheading.snippet-content-intro.introheading.js-slide-up=spec.introheading
+          if spec.introheadingVisible
+            h2.snippet-content-heading.display-font.mainheading.primarycolor.js-slide-up=spec.heading
+          else
+            h2.snippet-content-subheading.display-font.subheading.primarycolor.js-slide-up=spec.heading
+          .horizontal-line.js-line
+        .snippet-content-right
+          p.snippet-content-body.js-slide-up=spec.body
+            a.find-out-more(href='#') FIND OUT MORE

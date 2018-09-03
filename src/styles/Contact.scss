@@ -1,0 +1,73 @@
+@import './variables.scss';
+#google-maps{
+  display:none;
+  margin: 0;
+  @media all and (min-width: 780px) {
+    width: 50vw;
+    height: 380px;
+    display:block;
+  }
+
+}
+.license{
+  font-size: 0.7em;
+  text-align: center;
+  padding-bottom: 10px;
+  p,a{
+    padding:0;
+    margin:0;
+    line-height: 16px !important;
+  }
+}
+.contact{
+  background-color: $primary;
+  height:auto;
+  display:flex;
+  padding:0;
+  flex-direction: column;
+  padding-bottom: 20px;
+  @media all and (min-width: 780px) {
+    flex-direction: row;
+    height:380px;
+    padding-bottom: 0px;
+  }
+  .textblock-title{
+    color: $white;
+  }
+  &-icon{
+    font-family: "Flaticon";
+    color: rgb(255,255,255);
+    padding:3px 15px 3px 3px;
+    font-size: 1.2em;
+
+  }
+  >div:first-child{
+    flex-grow: 1;
+  }
+  .textblock-title{
+    margin-bottom: 0;
+    padding-top: 40px;
+    padding-left:10%;
+
+  }
+  .textblock-bodytext{
+    background: none;
+    margin-left: 0;
+
+    padding-left:10%;
+    a{
+      color: $white;
+      opacity:0.8;
+      font-family: 'Lato-Regular', sans-serif;
+      font-display: auto;
+      &:hover, &:focus{
+        opacity:1;
+        .contact-icon{
+            opacity:1;
+        }
+
+      }
+
+    }
+  }
+}

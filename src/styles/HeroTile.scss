@@ -1,0 +1,58 @@
+@import './variables.scss';
+
+.herotile{
+  background: #ff5f6d; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff5f6d 10%, #ffc371 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ff5f6d 10%,#ffc371 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff5f6d 10%,#ffc371 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5f6d', endColorstr='#ffc371',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 80vh;
+  max-height: 620px;
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  &-text{
+    height:100%;
+    position: relative;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    padding-left: 5%;
+    display:flex;
+    @media all and (min-width: 780px) {
+      padding-left: 10%;
+    }
+
+
+    h1, h2 {
+      color: $black;
+      font-family: 'Playfair Display', serif;
+      font-display: auto;
+    }
+    h1{
+      font-size:6em;
+      font-weight: bold;
+      margin-bottom: 0.1em;
+      max-width: 500px;
+      color: $white;
+      line-height: 1;
+    }
+    h2{
+      font-size: 1.4em;
+      font-family: 'Lato-Regular', sans-serif;
+      font-display: auto;
+      color: $white;
+    }
+
+
+
+
+
+
+
+  }
+}

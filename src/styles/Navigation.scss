@@ -1,0 +1,130 @@
+@import './variables.scss';
+$navHeight:60px;
+
+.nav{
+  position: fixed;
+  top: 0;
+  left:0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  font-family: 'Lato-Regular';
+  font-display: auto;
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0 5px 5px -5px rgba(128, 128, 128, 0.3);
+  font-size: 0.8em;
+  letter-spacing: 2px;
+
+  @media all and (min-width: 780px) {
+    z-index:10;
+    display:flex;
+    justify-content: center;
+  }
+
+  &-list{
+    list-style: none;
+    margin: 0;
+
+
+    max-width: 500px;
+
+    width: 100%;
+    position:relative;
+    top: calc(50% - 180px);
+    @media all and (min-width: 780px) {
+      padding: 0 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+    }
+
+  }
+  &-item{
+
+
+    @media all and (min-width: 780px) {
+      display:inline-block;
+    }
+
+
+
+    a {
+      color: $primary;
+
+      padding:10px 20px;
+      border-bottom: 3px solid transparent;
+      font-weight: bold;
+      cursor: pointer;
+      @media all and (min-width: 780px) {
+        padding:17px 0px 15px;
+        display:inline-block;
+      }
+
+      &:hover, &:focus{
+
+
+
+        background-color: $primary;
+        color: $white;
+        .home-icon{
+          color: $white;
+        }
+        @media all and (min-width: 780px) {
+          background-color: $white;
+          border-bottom: 3px solid $primary;
+          color: $primary;
+          .home-icon{
+            color: $primary;
+          }
+        }
+      }
+
+    }
+    .home-icon{
+      font-family: "Flaticon";
+      color: $primary;
+      text-align: center;
+      display:inline-block;
+      width: 3em;
+      font-size: 1.5em;
+      padding:0;
+    }
+    &._home a  {
+      padding: 15px 0;
+
+      // margin: 0 20%;
+    }
+  }
+
+
+      &.collapse-desktop {
+        animation: collapse-desktop .5s ease forwards;
+      }
+      &.open-desktop {
+        animation: open-desktop .5s ease forwards;
+      }
+    }
+
+
+    //animation
+
+    @keyframes collapse-desktop {
+      from {
+        opacity: 1;
+        top: 0;
+      }
+      to {
+        opacity: 0;
+        top: -$navHeight;
+      }
+    }
+
+    @keyframes open-desktop {
+      from {
+        opacity: 0;
+        top: -$navHeight;
+      }
+      to {
+        opacity: 1;
+        top: 0;
+      }
+    }

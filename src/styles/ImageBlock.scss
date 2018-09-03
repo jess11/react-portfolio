@@ -1,0 +1,15 @@
+.imageblock{
+  display:grid;
+  img{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    object-fit: cover;
+  }
+
+  &-overlay{
+    background-color: rgba(242, 242, 242, 0.3);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+  }
+}

@@ -1,0 +1,118 @@
+@import './variables.scss';
+
+.work{
+  .textblock-bodytext{
+    margin-left: 0;
+  }
+  &-github-link{
+    display: inline-block;
+    margin-left: 15px;
+    padding: 5px 20px;
+    border: 1px solid $black;
+    border-radius: 4px;
+    @media all and (min-width: 780px) {
+      margin-left: 30px;
+    }
+    &:hover, &:focus{
+      background: $black;
+      color: $white;
+      .work-icon{
+        color: $white;
+      }
+    }
+  }
+  &-live{
+    li > ul{
+      margin: 0px 0px 10px 30px;
+    }
+    p > ul{
+      margin: 20px;
+    }
+    a{
+      text-decoration: underline;
+      display: inline-block;
+
+      &:hover{
+        color: $primary;
+
+        text-decoration: none;
+      }
+    }
+  }
+  &-icon{
+    font-family: "Flaticon";
+    color: $black;
+    padding: 3px 15px 3px 3px;
+    font-size: 1.5em;
+  }
+  &-icon-overlay{
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 80%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out 0s;
+    font-family: "Flaticon";
+    color: white;
+    padding: 3px 15px 3px 3px;
+    font-size: 2em;
+  }
+  &-overlay{
+    width: 69.26%;
+    height: 71%;
+    background: rgba(0,0,0,0.7);
+     position: absolute;
+   left: 15.31%;
+    top: 11%;
+    border-radius: 10px 10px 0 0;
+   bottom: 0;
+   right: 0;
+   opacity: 0;
+   transition: all 0.4s ease-in-out 0s;
+  }
+  &-image{
+    width:90vw;
+    height:auto;
+    @media all and (min-width: 780px) {
+      width:400px;
+    }
+    &-wrapper{
+      flex-shrink: 0;
+      >a{
+        position: relative;
+        display:inline-block;
+        &:hover .work-icon-overlay{
+          top: 50%;
+           left: 50%;
+           opacity: 1;
+        }
+        &:hover .work-overlay{
+          opacity:1;
+        }
+
+      }
+    }
+  }
+  &-project{
+
+    padding:1em 0 2em;
+    &:nth-child(even){
+      flex-wrap: wrap-reverse;
+      display: flex;
+    }
+
+    @media all and (min-width: 780px) {
+      &:nth-child(even){
+        flex-wrap: nowrap;
+        display: flex;
+      }
+      padding:4em 0 2em;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+}

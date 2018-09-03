@@ -1,0 +1,205 @@
+@import "./materialize.scss";
+// @import '../../node_modules/vue-material/dist/vue-material.min.css';
+//colors
+
+$dark-grey: #3b3e4d;
+$grey: #70688a;
+$purple: #8041fd;
+$dark-purple: #985dff;
+$purple: #e7cfce;
+$aqua: #31dcc6;
+$light-purple: #988ac9;
+$white: #ffffff;
+$white-50: rgba( 255,255,255,0.5);
+$white-70: rgba( 255,255,255,0.7);
+$black-20: rgba( 0,0,0,0.2);
+
+body{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70688a+0,70688a+1,3b3e4d+100 */
+background: #70688a; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #70688a 0%, #70688a 1%, #3b3e4d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #70688a 0%,#70688a 1%,#3b3e4d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #70688a 0%,#70688a 1%,#3b3e4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70688a', endColorstr='#3b3e4d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
+.title{
+  color: $white !important;
+}
+
+.DashboardLogo{
+  width: 15px;
+  position:relative;
+  height: 20px;
+  margin-bottom: 15px;
+  opacity:0;
+  animation: slideright 0.8s ease-out 0.7s forwards;
+}
+.Rectangle{
+  width: 3px;
+  height: 20px;
+  background-color: $white-50;
+  display:inline-block;
+  position:absolute;
+  bottom: 0px;
+  transform-origin:bottom;
+  &--one{
+      left: 0px;
+      height: 10px;
+      animation: goupdown1 1.6s ease-out 0s forwards infinite;
+
+  }
+  &--two{
+      left: 6px;
+      height: 6px;
+      animation: goupdown2 2s ease-out 0s forwards infinite;
+  }
+  &--three{
+      left: 12px;
+      height: 15px;
+      animation: goupdown3 1.3s ease-out 0s forwards infinite;
+  }
+  &--four{
+      width: 15px;
+      height: 2px;
+      bottom: -5px;
+      left: 0px;
+      animation: slideright 0.9s ease-out 0s forwards;
+  }
+}
+
+
+
+@keyframes slideright {
+  0% {
+    transform: translateX(-6px);
+    opacity:0;
+
+  }
+  100% {
+    transform: translateX(0px);
+    opacity:1;
+  }
+}
+
+@keyframes goupdown1 {
+  0%{
+    transform: scaleY(0.9);
+  }
+  50%{
+    transform: scaleY(1.5);
+  }
+  100% {
+    transform: scaleY(0.9);
+  }
+}
+@keyframes goupdown2 {
+  0%{
+    transform: scaleY(1);
+  }
+  50%{
+    transform: scaleY(1.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes goupdown3 {
+  0%{
+    transform: scaleY(0.5);
+  }
+  50%{
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
+
+.name, .nav, .panel-title{
+  color: $white-70;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  margin-top: 10px;
+  opacity:0;
+  animation: slideright 0.8s ease-out 1s forwards;
+}
+.nav{
+  margin: 30px 0 20px;
+  &-item{
+    cursor:pointer;
+    transition: 0.5s;
+    &:hover{
+      color: $white;
+    }
+  }
+}
+
+.container{
+  padding: 50px;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  &-overlay{
+    padding: 30px;
+    background-color:$black-20;
+    margin: 0 auto;
+    border-radius: 8px;
+    animation: rollout 0.8s ease-out 0s forwards;
+    display:flex;
+  }
+  .side-menu{
+    width: 150px;
+    padding-right: 20px;
+  }
+  .main{
+    flex-grow: 1;
+    display:flex;
+    // height: 300px;
+    flex-wrap: wrap;
+  }
+
+}
+
+@keyframes rollout {
+  0%{
+    transform: translateX(-100%);
+    opacity:0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel{
+  background-color: $black-20;
+  padding: 20px 30px;
+  border-radius: 0px;
+  width: 48%;
+  &-title{
+    color: $white-50;
+
+  }
+}
+
+@media only screen and (max-width : 980px) {
+  .container{
+    padding: 0px;
+  }
+  .main, .container-overlay{
+    flex-direction: column;
+  }
+  .container-overlay{
+    padding: 20px;
+  }
+  .panel{
+    width: auto;
+  }
+}
